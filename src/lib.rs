@@ -1,5 +1,3 @@
-use hex;
-
 pub trait Sha {
     fn new() -> Self;
     fn digest(&self, input: &[u8]) -> String;
@@ -9,7 +7,7 @@ pub struct Sha1 {}
 
 impl Sha1 {
     // Initial hash values
-    const H: [u32; 5]= [0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476, 0xC3D2E1F0];
+    const H: [u32; 5] = [0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476, 0xC3D2E1F0];
 
     // Round constants for SHA-1
     const K: [u32; 4] = [0x5A827999, 0x6ED9EBA1, 0x8F1BBCDC, 0xCA62C1D6];
@@ -20,7 +18,7 @@ impl Sha for Sha1 {
         Self {}
     }
     fn digest(&self, input: &[u8]) -> String {
-        let padded = pad_512(input); // Padding the input to the required block size 
+        let padded = pad_512(input); // Padding the input to the required block size
 
         let mut h0 = Self::H[0];
         let mut h1 = Self::H[1];
@@ -174,7 +172,7 @@ impl Sha for Sha256 {
             h6 = h6.wrapping_add(g);
             h7 = h7.wrapping_add(h);
         }
-        
+
         // Convert final hash values to bytes
         let mut hash = [0u8; 32];
         hash[..4].copy_from_slice(&h0.to_be_bytes());
