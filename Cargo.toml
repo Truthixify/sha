@@ -2,6 +2,7 @@
 name = "sha-rs"
 version = "0.1.0"
 author = ["truthixify@gmail.com"]
+description = "This project is a pure Rust implementation of three widely used cryptographic hash algorithms: SHA-1, SHA-256, and SHA-512. These algorithms are implemented from scratch, without relying on external libraries for the core hashing logic."
 repository = "https://github.com/Truthixify/sha.git"
 keyword = ["cryptography", "hash", "sha"]
 categories = ["cryptography", "hash function"]
