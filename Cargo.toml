@@ -1,7 +1,13 @@
 [package]
-name = "sha"
+name = "sha-rs"
 version = "0.1.0"
+author = ["truthixify@gmail.com"]
+repository = "https://github.com/Truthixify/sha.git"
+keyword = ["cryptography", "hash", "sha"]
+categories = ["cryptography", "hash function"]
 edition = "2021"
+license = "MIT OR Apache-2.0"
+readme = "README.md" 
 
 [dependencies]
 hex = "0.4.3"
